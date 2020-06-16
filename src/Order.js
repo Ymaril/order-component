@@ -6,7 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 function Order() {
   return (
       <>
-          <h1>Выберите способ доставки</h1>
+          <h1 className="title">Выберите способ доставки</h1>
           <Tabs>
               <TabList>
                   <Tab>Доставка</Tab>

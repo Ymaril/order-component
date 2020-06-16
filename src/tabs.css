@@ -13,7 +13,8 @@
   border-bottom: none;
   position: relative;
   list-style: none;
-  padding: 6px 12px;
+  padding: 12px 32px;
+  color: #999999;
   cursor: pointer;
   background: #EDEEEF;
   border-radius: 5px 5px 0 0;
@@ -22,28 +23,13 @@
 
 .react-tabs__tab--selected {
   background: #FFF;
-  color: black;
-}
-
-.react-tabs__tab--disabled {
-  color: GrayText;
-  cursor: default;
+  color: #215BF0;
 }
 
 .react-tabs__tab:focus {
   box-shadow: 0 0 5px hsl(208, 99%, 50%);
   border-color: hsl(208, 99%, 50%);
   outline: none;
-}
-
-.react-tabs__tab:focus:after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  left: -4px;
-  right: -4px;
-  bottom: -5px;
-  background: #FFF;
 }
 
 .react-tabs__tab-panel {
