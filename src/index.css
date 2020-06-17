@@ -5,19 +5,3 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #F6F6F6;
 }
-
-h1 {
-  font-weight: normal;
-}
-
-.title {
-  margin-top: 72px;
-  margin-bottom: 48px;
-}
-
-input {
-  padding: 12px 17px;
-  box-sizing: border-box;
-  border: 1px solid #999999;
-  border-radius: 4px;
-}

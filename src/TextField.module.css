@@ -1,0 +1,12 @@
+.text-field {
+  padding-bottom: 36px;
+}
+
+.label {
+  font-size: 14px;
+}
+
+.error {
+  font-size: 12px;
+  color: #F12828;
+}

@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.css';
 import Order from "./Order";
 
 function App() {
   return (
-      <div className="container">
+      <div className={styles['container']}>
           <Order/>
       </div>
   );
