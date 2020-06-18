@@ -18,31 +18,37 @@ function DeliveryForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <TextField label="ФИО" error={errors.full_name}>
-                <input
-                    name="full_name"
-                    ref={register({
-                        required: true,
-                        pattern: /^[а-яА-ЯЁё -]+$/
-                    })}
-                    type="text"
-                    className={classNamesFor('full_name')}
-                    placeholder="Только кириллица"
-                />
-            </TextField>
-            <TextField label="Телефон" error={errors.phone}>
-                <Controller
-                    as={PhoneInput}
-                    name="phone"
-                    control={control}
-                    placeholder="+7 (___) ___-__-__"
-                    rules={{
-                        required: true,
-                        validate: {pattern: isValidPhoneNumber}
-                    }}
-                    className={classNamesFor('phone')}
-                />
-            </TextField>
+            <div className={styles['row']}>
+                <div className={styles['column']}>
+                    <TextField label="ФИО" error={errors.full_name}>
+                        <input
+                            name="full_name"
+                            ref={register({
+                                required: true,
+                                pattern: /^[а-яА-ЯЁё -]+$/
+                            })}
+                            type="text"
+                            className={classNamesFor('full_name')}
+                            placeholder="Только кириллица"
+                        />
+                    </TextField>
+                </div>
+                <div className={styles['column']}>
+                    <TextField label="Телефон" error={errors.phone}>
+                        <Controller
+                            as={PhoneInput}
+                            name="phone"
+                            control={control}
+                            placeholder="+7 (___) ___-__-__"
+                            rules={{
+                                required: true,
+                                validate: {pattern: isValidPhoneNumber}
+                            }}
+                            className={classNamesFor('phone')}
+                        />
+                    </TextField>
+                </div>
+            </div>
             <TextField label="Адрес доставки" error={errors.address}>
                 <input
                     name="address"
