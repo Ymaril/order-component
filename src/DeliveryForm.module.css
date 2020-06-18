@@ -7,3 +7,7 @@
   height: 112px;
   resize: none;
 }
+
+.submit {
+  float: right;
+}

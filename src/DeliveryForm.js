@@ -4,6 +4,7 @@ import TextField from "./TextField";
 import TextInput from "./TextFields/TextInput";
 import TextAreaInput from "./TextFields/TextAreaInput";
 import styles from "./DeliveryForm.module.css";
+import button_styles from "./buttons.module.css";
 
 function DeliveryForm() {
     const { register, handleSubmit, errors } = useForm();
@@ -25,6 +26,7 @@ function DeliveryForm() {
             <TextField label="Телефон" error={errors.phone}>
                 <TextInput
                     name="phone"
+                    type="tel"
                     register={register({required: 'Поле должно быть заполнено'})}
                     className={styles['input']}
                     error={errors.phone}
@@ -48,7 +50,7 @@ function DeliveryForm() {
                     error={errors.comment}
                 />
             </TextField>
-            <input type="submit" />
+            <input type="submit" className={`${styles['submit']} ${button_styles['button']}`}/>
         </form>
     );
 }

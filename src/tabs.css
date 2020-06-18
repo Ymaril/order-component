@@ -35,6 +35,7 @@
 .react-tabs__tab-panel {
   padding: 40px;
   display: none;
+  overflow: auto;
 }
 
 .react-tabs__tab-panel--selected {

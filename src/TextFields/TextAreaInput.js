@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TextInput.module.css';
+import styles from '../inputs.module.css';
 
 function TextAreaInput({ name, register, error, className }) {
   return (

@@ -1,14 +1,14 @@
 import React from 'react';
-import styles from './TextInput.module.css';
+import input_styles from '../inputs.module.css';
 
-function TextInput({ name, register, error, className, placeholder}) {
+function TextInput({ name, register, error, className, placeholder, type}) {
   return (
       <input
           name={name}
           id={name}
           ref={register}
-          type="text"
-          className={`${className} ${styles['text-input']} ${error && styles['is-invalid']}`}
+          type={type || "text"}
+          className={`${className} ${input_styles['text-input']} ${error && input_styles['is-invalid']}`}
           placeholder={placeholder}
       />
   );
