@@ -1,7 +1,7 @@
 import React from 'react';
 import './tabs.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import DeliveryForm from "./DeliveryForm";
+import DeliveryForm from "./Order/DeliveryForm";
 import styles from './Order.module.css'
 
 function Order() {
