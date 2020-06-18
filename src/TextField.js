@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './TextField.module.css';
+import error_messages from "./error_messages";
 
 function TextField({ label, error, children }) {
   return (
@@ -8,7 +9,7 @@ function TextField({ label, error, children }) {
               {label}
               {children}
           </label>
-          {error?.message && <span className={styles['error']}>{error.message}</span>}
+          {error?.type && <span className={styles['error']}>{error_messages[error.type]}</span>}
       </div>
   );
 }

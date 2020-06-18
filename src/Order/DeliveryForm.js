@@ -4,7 +4,7 @@ import TextField from "../TextField";
 import styles from "./DeliveryForm.module.css";
 import inputs_styles from "../styles/inputs.module.css";
 import buttons_styles from "../styles/buttons.module.css";
-import PhoneInput from 'react-phone-number-input/input'
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input/input'
 
 function DeliveryForm() {
     const { register, handleSubmit, errors, control } = useForm();
@@ -16,14 +16,15 @@ function DeliveryForm() {
         errors[field_name] && inputs_styles['is-invalid']
     ].join(' ');
 
-    console.log(errors);
-
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <TextField label="ФИО" error={errors.full_name}>
                 <input
                     name="full_name"
-                    ref={register({required: 'Поле должно быть заполнено'})}
+                    ref={register({
+                        required: true,
+                        pattern: /^[а-яА-ЯЁё -]+$/
+                    })}
                     type="text"
                     className={classNamesFor('full_name')}
                     placeholder="Только кириллица"
@@ -35,14 +36,17 @@ function DeliveryForm() {
                     name="phone"
                     control={control}
                     placeholder="+7 (___) ___-__-__"
-                    rules={{required: 'Поле должно быть заполнено'}}
+                    rules={{
+                        required: true,
+                        validate: {pattern: isValidPhoneNumber}
+                    }}
                     className={classNamesFor('phone')}
                 />
             </TextField>
             <TextField label="Адрес доставки" error={errors.address}>
                 <input
                     name="address"
-                    ref={register({required: 'Поле должно быть заполнено'})}
+                    ref={register({required: true})}
                     type="text"
                     className={classNamesFor('address')}
                     placeholder="Город, улица, дом"
@@ -51,7 +55,7 @@ function DeliveryForm() {
             <TextField label="Комментарий" error={errors.comment}>
                 <textarea
                     name="comment"
-                    ref={register({required: 'Поле должно быть заполнено'})}
+                    ref={register({required: true})}
                     className={`${classNamesFor('comment')} ${styles['text-area']}`}
                 />
             </TextField>
