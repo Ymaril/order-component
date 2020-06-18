@@ -7,6 +7,7 @@ function TextInput({ name, register, error, className, placeholder}) {
           name={name}
           id={name}
           ref={register}
+          type="text"
           className={`${className} ${styles['text-input']} ${error && styles['is-invalid']}`}
           placeholder={placeholder}
       />

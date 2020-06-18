@@ -5,3 +5,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #F6F6F6;
 }
+
+[type=text], textarea {
+  outline: none;
+  padding: 12px 17px;
+  box-sizing: border-box;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+input:focus {
+  border: 1px solid #222222;
+}
