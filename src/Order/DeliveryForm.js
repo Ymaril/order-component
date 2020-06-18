@@ -10,6 +10,12 @@ function DeliveryForm() {
     const { register, handleSubmit, errors, control } = useForm();
     const onSubmit = data => console.log(data);
 
+    const classNamesFor = field_name => [
+        styles['input'],
+        inputs_styles['text-input'],
+        errors[field_name] && inputs_styles['is-invalid']
+    ].join(' ');
+
     console.log(errors);
 
     return (
@@ -19,7 +25,7 @@ function DeliveryForm() {
                     name="full_name"
                     ref={register({required: 'Поле должно быть заполнено'})}
                     type="text"
-                    className={`${styles['input']} ${inputs_styles['text-input']} ${errors.full_name && inputs_styles['is-invalid']}`}
+                    className={classNamesFor('full_name')}
                     placeholder="Только кириллица"
                 />
             </TextField>
@@ -30,7 +36,7 @@ function DeliveryForm() {
                     control={control}
                     placeholder="+7 (___) ___-__-__"
                     rules={{required: 'Поле должно быть заполнено'}}
-                    className={`${styles['input']} ${inputs_styles['text-input']} ${errors.phone && inputs_styles['is-invalid']}`}
+                    className={classNamesFor('phone')}
                 />
             </TextField>
             <TextField label="Адрес доставки" error={errors.address}>
@@ -38,7 +44,7 @@ function DeliveryForm() {
                     name="address"
                     ref={register({required: 'Поле должно быть заполнено'})}
                     type="text"
-                    className={`${styles['input']} ${inputs_styles['text-input']} ${errors.address && inputs_styles['is-invalid']}`}
+                    className={classNamesFor('address')}
                     placeholder="Город, улица, дом"
                 />
             </TextField>
@@ -46,7 +52,7 @@ function DeliveryForm() {
                 <textarea
                     name="comment"
                     ref={register({required: 'Поле должно быть заполнено'})}
-                    className={`${styles['input']} ${styles['text-area']} ${inputs_styles['text-input']} ${errors.comment && inputs_styles['is-invalid']}`}
+                    className={`${classNamesFor('comment')} ${styles['text-area']}`}
                 />
             </TextField>
             <input type="submit" className={`${styles['submit']} ${buttons_styles['button']}`}/>
