@@ -2,6 +2,7 @@ import React from 'react';
 import './tabs.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import DeliveryForm from "./Order/DeliveryForm";
+import PickpointForm from "./Order/PickpointForm";
 import styles from './Order.module.css'
 
 function Order() {
@@ -17,6 +18,7 @@ function Order() {
                   <DeliveryForm/>
               </TabPanel>
               <TabPanel>
+                  <PickpointForm/>
               </TabPanel>
           </Tabs>
       </>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './App.module.css';
+import styles from './styles/layout.module.css';
 import Order from "./Order";
 
 function App() {

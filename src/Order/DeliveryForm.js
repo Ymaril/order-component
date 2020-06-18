@@ -2,8 +2,8 @@ import React from 'react';
 import { useForm, Controller } from "react-hook-form";
 import TextField from "../TextField";
 import styles from "./DeliveryForm.module.css";
+import layout_styles from "../styles/layout.module.css";
 import inputs_styles from "../styles/inputs.module.css";
-import buttons_styles from "../styles/buttons.module.css";
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input/input'
 
 function DeliveryForm() {
@@ -18,8 +18,8 @@ function DeliveryForm() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div className={styles['row']}>
-                <div className={styles['column']}>
+            <div className={layout_styles['row']}>
+                <div className={layout_styles['column']}>
                     <TextField label="ФИО" error={errors.full_name}>
                         <input
                             name="full_name"
@@ -33,7 +33,7 @@ function DeliveryForm() {
                         />
                     </TextField>
                 </div>
-                <div className={styles['column']}>
+                <div className={layout_styles['column']}>
                     <TextField label="Телефон" error={errors.phone}>
                         <Controller
                             as={PhoneInput}
@@ -65,7 +65,7 @@ function DeliveryForm() {
                     className={`${classNamesFor('comment')} ${styles['text-area']}`}
                 />
             </TextField>
-            <input type="submit" className={`${styles['submit']} ${buttons_styles['button']}`}/>
+            <input type="submit" className={`${styles['submit']} ${inputs_styles['button']}`} value="Оформить заказ"/>
         </form>
     );
 }
