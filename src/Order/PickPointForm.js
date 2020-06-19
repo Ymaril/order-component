@@ -19,7 +19,7 @@ const addresses = [
 ];
 
 function PickPointForm() {
-  const { register, handleSubmit, getValues, setValue, watch } = useForm();
+  const { register, handleSubmit, setValue, watch } = useForm();
   const onSubmit = (data) => console.log(data);
 
   const address = watch("address");
@@ -48,8 +48,7 @@ function PickPointForm() {
             lat: e.lat,
             lng: e.lng,
           },
-          onClick: () => setValue("address", id.toString()),
-          is_selected: id.toString() === getValues("address"),
+          onClick: () => setValue("address", id.toString())
         }))}
         className={styles["map"]}
       />
