@@ -25,8 +25,8 @@
 }
 
 .button {
-  color: #FFFFFF;
-  background: #215BF0;
+  color: #ffffff;
+  background: #215bf0;
   border: 0;
   padding: 1em 2em;
   font-size: 16px;
@@ -35,11 +35,12 @@
 }
 
 .button:disabled {
-  background: #EDEEEF;
+  background: #edeeef;
   color: #999999;
 }
 
-.button:focus, .button:hover {
-  background: #0F41C4;
+.button:focus,
+.button:hover {
+  background: #0f41c4;
   outline: none;
 }

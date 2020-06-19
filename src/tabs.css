@@ -16,14 +16,14 @@
   padding: 12px 32px;
   color: #999999;
   cursor: pointer;
-  background: #EDEEEF;
+  background: #edeeef;
   border-radius: 5px 5px 0 0;
   margin-right: 8px;
 }
 
 .react-tabs__tab--selected {
-  background: #FFF;
-  color: #215BF0;
+  background: #fff;
+  color: #215bf0;
 }
 
 .react-tabs__tab:focus {
@@ -40,5 +40,5 @@
 
 .react-tabs__tab-panel--selected {
   display: block;
-  background: #FFF;
+  background: #fff;
 }
