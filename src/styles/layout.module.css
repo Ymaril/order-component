@@ -5,6 +5,10 @@
   padding: 10px;
 }
 
+.submit {
+  float: right;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;

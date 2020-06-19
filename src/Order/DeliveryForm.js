@@ -65,7 +65,7 @@ function DeliveryForm() {
                     className={`${classNamesFor('comment')} ${styles['text-area']}`}
                 />
             </TextField>
-            <input type="submit" className={`${styles['submit']} ${inputs_styles['button']}`} value="Оформить заказ"/>
+            <input type="submit" className={`${layout_styles['submit']} ${inputs_styles['button']}`} value="Оформить заказ"/>
         </form>
     );
 }

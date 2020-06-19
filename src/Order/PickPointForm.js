@@ -1,29 +1,25 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import styles from "./DeliveryForm.module.css";
+import styles from "./PickPointForm.module.css";
 import inputs_styles from "../styles/inputs.module.css";
 import layout_styles from "../styles/layout.module.css";
+import Map from "./Map/Map";
 
 const addresses = [
     {
         name: 'Пункт выдачи заказов Песчаная ул., д. 13',
-        latitude: 55.982626,
-        longitude: 37.140296
+        lat: 55.982626,
+        lng: 37.140296
     },
     {
         name: 'Пункт выдачи заказов Подсосенский пер., д. 11',
-        latitude: 55.977256,
-        longitude: 37.152784
-    },
-    {
-        name: 'Пункт выдачи заказов Подсосенский пер., д. 11',
-        latitude: 55.977256,
-        longitude: 37.152784
+        lat: 55.977256,
+        lng: 37.152784
     }
 ];
 
-function PickpointForm() {
-    const { register, handleSubmit } = useForm();
+function PickPointForm() {
+    const { register, handleSubmit, getValues, setValue } = useForm();
     const onSubmit = data => console.log(data);
 
     return (
@@ -35,7 +31,7 @@ function PickpointForm() {
                             <input
                                 name="address"
                                 type="radio"
-                                ref={register}
+                                ref={register({required: true})}
                                 className={inputs_styles['radio-button']}
                                 value={id}
                             />
@@ -44,9 +40,20 @@ function PickpointForm() {
                     </div>)
                 }
             </div>
-            <input type="submit" className={`${styles['submit']} ${inputs_styles['button']}`} value="Оформить заказ"/>
+            <Map
+                markers={addresses.map((e, id) => ({
+                    position: {
+                        lat: e.lat,
+                        lng: e.lng
+                    },
+                    onClick: () => setValue("address", id.toString()),
+                    is_selected: id.toString() === getValues("address")
+                }))}
+                className={styles['map']}
+            />
+            <input type="submit" className={`${layout_styles['submit']} ${inputs_styles['button']}`} value="Оформить заказ"/>
         </form>
     );
 }
 
-export default PickpointForm;
+export default PickPointForm;
