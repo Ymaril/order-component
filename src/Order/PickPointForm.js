@@ -19,8 +19,10 @@ const addresses = [
 ];
 
 function PickPointForm() {
-    const { register, handleSubmit, getValues, setValue } = useForm();
+    const { register, handleSubmit, getValues, setValue, watch } = useForm();
     const onSubmit = data => console.log(data);
+
+    const address = watch("address");
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -51,7 +53,12 @@ function PickPointForm() {
                 }))}
                 className={styles['map']}
             />
-            <input type="submit" className={`${layout_styles['submit']} ${inputs_styles['button']}`} value="Оформить заказ"/>
+            <input
+                type="submit"
+                disabled={!address}
+                className={`${layout_styles['submit']} ${inputs_styles['button']}`}
+                value="Оформить заказ"
+            />
         </form>
     );
 }
