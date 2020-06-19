@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/order-component/static/css/main.cef29252.chunk.css",
+    "main.js": "/order-component/static/js/main.6ce84e38.chunk.js",
+    "main.js.map": "/order-component/static/js/main.6ce84e38.chunk.js.map",
+    "runtime-main.js": "/order-component/static/js/runtime-main.004f650f.js",
+    "runtime-main.js.map": "/order-component/static/js/runtime-main.004f650f.js.map",
+    "static/js/2.75e29a0b.chunk.js": "/order-component/static/js/2.75e29a0b.chunk.js",
+    "static/js/2.75e29a0b.chunk.js.map": "/order-component/static/js/2.75e29a0b.chunk.js.map",
+    "index.html": "/order-component/index.html",
+    "precache-manifest.30af8ee2155d1dca750a5c4d173fd26c.js": "/order-component/precache-manifest.30af8ee2155d1dca750a5c4d173fd26c.js",
+    "service-worker.js": "/order-component/service-worker.js",
+    "static/css/main.cef29252.chunk.css.map": "/order-component/static/css/main.cef29252.chunk.css.map",
+    "static/js/2.75e29a0b.chunk.js.LICENSE.txt": "/order-component/static/js/2.75e29a0b.chunk.js.LICENSE.txt",
+    "static/media/marker.svg": "/order-component/static/media/marker.0c92d379.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.004f650f.js",
+    "static/js/2.75e29a0b.chunk.js",
+    "static/css/main.cef29252.chunk.css",
+    "static/js/main.6ce84e38.chunk.js"
+  ]
+}
