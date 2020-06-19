@@ -39,8 +39,7 @@
   color: #999999;
 }
 
-.button:focus,
-.button:hover {
+.button:focus:enabled, .button:hover:enabled {
   background: #0f41c4;
   outline: none;
 }
