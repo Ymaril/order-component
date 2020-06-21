@@ -3,13 +3,12 @@ import styles from "./Map.module.css";
 import ReactGoogleMapLoader from "react-google-maps-loader";
 import ReactGoogleMap from "react-google-map";
 import iconMarker from "./marker.svg";
+import keys from "../../keys";
 
 function Map({ markers, className }) {
   return (
     <ReactGoogleMapLoader
-      params={{
-        key: "AIzaSyAXWDKoK0l4IZ-1UwOqHN5b8h_y3y4Q-cc",
-      }}
+      params={{key: keys.google}}
       render={(googleMaps) =>
         googleMaps && (
           <div className={[styles["map"], className].join(" ")}>
